@@ -14,7 +14,7 @@ def main() -> None:
         print("SUCCESS: You're in an isolated environment!")
         print("Safe to install packages without affecting the global system.")
         print()
-        print(f"Package installation path: {site.getsitepackages()}")
+        print(f"Package installation path: {site.getsitepackages()[0]}")
         print()
 
     else:  # not a venv
@@ -24,7 +24,7 @@ def main() -> None:
         print("WARNING: You're in the global environment!")
         print("The machines can see everything you install.\n")
         print("To enter the construct, run:")
-        print("python3 -m virtualenv matrix_env")
+        print("python -m venv matrix_env")
         print("source matrix_env/bin/activate # On Unix")
         print("matrix_env\\Scripts\\activate # On Windows\n")
         print("Then run this program again.")
